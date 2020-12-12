@@ -4,9 +4,7 @@
 function troca(vetorA, vetorB) {
   if (vetorA.length == vetorB.length) {
     for (let i = 0; i < vetorA.length; i++) {
-      vetorA[i] = vetorB[i] + vetorA[i]
-      vetorB[i] = vetorA[i] - vetorB[i]
-      vetorA[i] = vetorA[i] - vetorB[i]
+      [vetorA[i], vetorB[i]] = [vetorB[i], vetorA[i]]
     }
   } else {
     console.log('Vetores de tamanhos diferentes');
