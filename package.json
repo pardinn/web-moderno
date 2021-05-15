@@ -1,0 +1,25 @@
+{
+  "name": "exercicios-js",
+  "version": "1.0.0",
+  "description": "Repositório criado para treinamento de conceitos e exercícios relacionados a JavaScript e web.   Referência de estudos: [Curso Desenvolvedor Web Moderno com Javascript - 13 Cursos | Udemy](https://www.udemy.com/curso-web/learn/v4/overview)",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "node-schedule": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pardinn/web-moderno.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pardinn/web-moderno/issues"
+  },
+  "homepage": "https://github.com/pardinn/web-moderno#readme"
+}
