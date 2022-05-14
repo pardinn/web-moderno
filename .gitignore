@@ -2,3 +2,4 @@
 node_modules
 .fiveserverrc.json
 fiveserver.config.js
+**/upload/*
