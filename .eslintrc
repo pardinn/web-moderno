@@ -13,6 +13,9 @@
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "@typescript-eslint/no-var-requires": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "radix": ["error", "as-needed"],
+    "no-console": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   }
 }
