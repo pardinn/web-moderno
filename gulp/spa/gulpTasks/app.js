@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
