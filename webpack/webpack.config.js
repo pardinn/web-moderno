@@ -16,15 +16,18 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: 'estilo.css',
     }),
-    new TerserPlugin({
-      parallel: true,
-      terserOptions: {
-        ecma: 6,
-      },
-    }),
   ],
   optimization: {
-    minimizer: [new CSSMinimizerPlugin({})],
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        extractComments: false,
+        terserOptions: {
+          ecma: 6,
+        },
+      }),
+      new CSSMinimizerPlugin({}),
+    ],
   },
   module: {
     rules: [
@@ -36,6 +39,10 @@ module.exports = {
           'css-loader', // interpreta @import, url()...
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        // use: ['file-loader'],
       },
     ],
   },

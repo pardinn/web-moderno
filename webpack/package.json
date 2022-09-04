@@ -1,7 +1,7 @@
 {
   "name": "capitulo-webpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aprendendo a trabalhar com Webpack. NOTA: As seguintes dependências são desnecessárias no projeto atual: style-loader, file-loader.",
   "main": "index.js",
   "scripts": {
     "start": "webpack",
@@ -14,6 +14,7 @@
     "cross-env": "5.1.5",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
+    "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^1.0.0",
     "node-sass": "^7.0.1",
     "sass-loader": "^13.0.2",
