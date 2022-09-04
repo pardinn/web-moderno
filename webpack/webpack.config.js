@@ -12,6 +12,10 @@ module.exports = {
     filename: 'principal.js',
     path: `${__dirname}/public`,
   },
+  devServer: {
+    static: './public',
+    port: 9000,
+  },
   plugins: [
     new MiniCSSExtractPlugin({
       filename: 'estilo.css',
