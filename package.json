@@ -4,6 +4,7 @@
   "description": "Repositório criado para treinamento de conceitos e exercícios relacionados a JavaScript e web.   Referência de estudos: [Curso Desenvolvedor Web Moderno com Javascript - 13 Cursos | Udemy](https://www.udemy.com/curso-web/learn/v4/overview)",
   "main": "index.js",
   "dependencies": {
+    "globals": "^15.8.0",
     "lodash": "^4.17.21",
     "node-schedule": "^2.1.1"
   },
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/pardinn/web-moderno#readme",
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.7.0",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
     "eslint": "^8.57.0",
