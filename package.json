@@ -5,11 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "lodash": "^4.17.21",
-    "node-schedule": "^1.3.0"
+    "node-schedule": "^2.1.1"
   },
   "scripts": {
-    "lint": "eslint --ext .js",
-    "lint:fix": "eslint -- --fix --ext .js"
+    "lint": "npx eslint --ext .js",
+    "lint:fix": "npx eslint -- --fix --ext .js"
   },
   "repository": {
     "type": "git",
@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/pardinn/web-moderno#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "^8.18.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.7.1"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3"
   }
 }
