@@ -38,6 +38,7 @@
             conteudoFinal = conteudoFinal.replace(expressoesComChaves[i], resultados[i]);
           }
           $(this).html(conteudoFinal);
+          return this; // necessário para conseguir encadear o plugin com outras chamadas
         };
       })(jQuery);
 
