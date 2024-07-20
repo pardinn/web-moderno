@@ -19,3 +19,69 @@
 </p>
 
 <!-- Formulário -->
+<div class="card">
+  <div class="card-header">
+    <h5 class="mb-0">Exemplo de Formulário</h5>
+  </div>
+  <div class="card-body">
+    <form action="" class="container-fluid">
+      <div class="form-row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" class="form-control" placeholder="Informe o nome" />
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="email" id="email" class="form-control" placeholder="Informe o Email" />
+            </div>
+            <small class="form-text text-muted"> Enviaremos um e-mail para confirmar o cadastro.</small>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label for="linguagemPreferida">Linguagem</label>
+            <select id="linguagemPreferida" class="form-control">
+              <option value="">Selecione</option>
+              <option>JS</option>
+              <option>Java</option>
+              <option>Python</option>
+              <option>Ruby</option>
+              <option>Outra</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+            <label class="form-check-label" for="defaultCheck1"> Default checkbox </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled />
+            <label class="form-check-label" for="defaultCheck2"> Disabled checkbox </label>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="form-row mb-0">
+        <div class="col-12 d-flex justify-content-end">
+          <button class="btn btn-primary mr-1" type="submit">Salvar</button>
+          <button class="btn btn-secondary" type="reset">Cancelar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
