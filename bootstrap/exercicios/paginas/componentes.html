@@ -148,6 +148,14 @@
 <hr />
 
 <!-- Tooltip -->
+<div>
+  <div class="alert alert-warning">
+    Precisa chamar uma função JS!
+    <strong>E agora?</strong>
+  </div>
+
+  <button class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Pense antes!">Excluir</button>
+</div>
 
 <h1 class="mt-5">
   6. Slider -
@@ -170,5 +178,7 @@
 <!-- Accordion -->
 
 <script>
-  // ...
+  // O que está dentro da tag script e foi obtido via requisição Ajax não é executado por padrão.
+  // É necessário ativar o script através do `eval()` em navegacao.js:19
+  $('[data-toggle="tooltip"]').tooltip();
 </script>
