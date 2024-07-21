@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { onLoadHtmlSuccess } from '../core/includes';
 
 const duration = 300;
 
@@ -18,18 +19,18 @@ function filterByCity(city) {
 
 $.fn.cityButtons = function () {
   const cities = new Set();
-  $('[wm-city]').each(function addCities(i, e) {
+  $('[wm-city]').each(function (i, e) {
     cities.add($(e).attr('wm-city'));
   });
 
   const buttons = Array.from(cities).map(city => {
     const button = $('<button>').addClass(['btn', 'btn-info']).html(city);
-    button.on('click', filterByCity(city));
+    button.on('click', () => filterByCity(city));
     return button;
   });
 
   const allCitiesButton = $('<button>').addClass(['btn', 'btn-info', 'btn-active']).html('Todas');
-  allCitiesButton.on('click', filterByCity(null));
+  allCitiesButton.on('click', () => filterByCity(null));
   buttons.push(allCitiesButton);
 
   const buttonGroup = $('<div>').addClass(['btn-group']);
@@ -39,4 +40,6 @@ $.fn.cityButtons = function () {
   return this;
 };
 
-$('[wm-city-buttons]').cityButtons();
+onLoadHtmlSuccess(function () {
+  $('[wm-city-buttons]').cityButtons();
+});
