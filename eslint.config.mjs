@@ -43,6 +43,7 @@ export default [
         },
       ],
       radix: ['error', 'as-needed'],
+      'func-names': ['warn', 'as-needed'],
       'no-console': 'off',
       'no-plusplus': [
         'error',
