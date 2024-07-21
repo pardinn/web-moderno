@@ -15,7 +15,7 @@
       .then(html => {
         destino.innerHTML = html;
         // Executa todos os scrips que estiverem nos arquivos html. Usado para ativar a tooltip
-        const scriptContent = html.match(/<script>([\s\S]*)<\/script>/)?.[1] || '';
+        const scriptContent = html.match(/<script>([\s\S]*)<\/script>/gi)?.[1] || '';
         if (scriptContent) {
           // eslint-disable-next-line no-eval
           eval(scriptContent);
