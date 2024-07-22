@@ -1,6 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import Primeiro from './componentes/Primeiro';
 
-const elemento = <h1>React 2</h1>;
-
-ReactDOM.render(elemento, document.getElementById('root'));
+/**
+ * O curso ensina a usar ReactDOM.render(), porém, o método foi descontinuado no React 18.
+ * A recomendação é utilizar `createRoot` em seu lugar.
+ * Para mais detalhes, leia https://react.dev/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis
+ * */
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<Primeiro />);
