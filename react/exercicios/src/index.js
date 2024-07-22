@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Primeiro from './componentes/Primeiro';
+import BomDia from './componentes/BomDia';
 
 /**
  * O curso ensina a usar ReactDOM.render(), porém, o método foi descontinuado no React 18.
@@ -9,4 +9,4 @@ import Primeiro from './componentes/Primeiro';
  * */
 const container = document.getElementById('root');
 const root = createRoot(container);
-root.render(<Primeiro />);
+root.render(<BomDia nome="Victor" />);
