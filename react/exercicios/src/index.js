@@ -1,8 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import BomDia from './componentes/BomDia';
+// import BomDia from './componentes/BomDia';
 
-import Multi, { BoaNoite } from './componentes/Multiplos';
+// import Multi, { BoaNoite } from './componentes/Multiplos';
+import Saudacao from './componentes/Saudacao';
 
 /**
  * O curso ensina a usar ReactDOM.render(), porém, o método foi descontinuado no React 18.
@@ -13,8 +14,9 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <div>
-    <BomDia nome="Victor" />
-    <Multi.BoaTarde nome="Natalia" />
-    <BoaNoite nome="Sofia" />
+    {/* <BomDia nome="Victor" /> */}
+    {/* <Multi.BoaTarde nome="Natalia" />
+    <BoaNoite nome="Sofia" /> */}
+    <Saudacao tipo="Bom dia" nome="João" />
   </div>,
 );
