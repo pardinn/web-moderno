@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client';
 // import Saudacao from './componentes/Saudacao';
 
 import Pai from './componentes/Pai';
+import Filho from './componentes/Filho';
 
 /**
  * O curso ensina a usar ReactDOM.render(), porém, o método foi descontinuado no React 18.
@@ -21,7 +22,9 @@ root.render(
     <BoaNoite nome="Sofia" /> */}
     {/* <Saudacao tipo="Bom dia" nome="João" /> */}
     <Pai nome="Paulo" sobrenome="Silva">
-      {/* Como passo os componentes Filhos aqui? */}
+      <Filho nome="Pedro" />
+      <Filho nome="Paulo" />
+      <Filho nome="Carla" />
     </Pai>
   </div>,
 );
