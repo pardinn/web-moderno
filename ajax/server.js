@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const multer = require('multer');
+const escape = require('escape-html');
 
 app.use(express.static('.'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,8 +30,14 @@ app.post('/upload', (req, res) => {
 })
 
 app.post('/formulario', (req, res) => {
+    const sanitizedBody = {};
+    for (const key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            sanitizedBody[key] = escape(req.body[key]);
+        }
+    }
     res.send({
-        ...req.body,
+        ...sanitizedBody,
         id: 7
     })
 })
