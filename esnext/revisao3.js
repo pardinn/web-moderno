@@ -9,12 +9,12 @@ const pessoa = {
   nome,
   ola() {
     return 'Oi gente!';
-  }
-}
+  },
+};
 console.log(pessoa.nome, pessoa.ola());
 
 // Class
-class Animal { }
+class Animal {}
 class Cachorro extends Animal {
   falar() {
     return 'Au au!';

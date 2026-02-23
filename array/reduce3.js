@@ -5,8 +5,7 @@ Array.prototype.reduce2 = function (callback, valorInicial) {
     acumulador = callback(acumulador, this[i], i, this);
   }
   return acumulador;
-}
-
+};
 
 const alunos = [
   { nome: 'João', nota: 7.3, bolsista: false },
@@ -24,5 +23,5 @@ const algumBolsista = (resultado, bolsista) => resultado || bolsista;
 console.log(alunos.map(a => a.bolsista).reduce2(algumBolsista, true));
 
 const soma = (total, valor) => total + valor;
-const nums = [1, 2, 3, 4, 5, 6]
+const nums = [1, 2, 3, 4, 5, 6];
 console.log(nums.reduce(soma, 21));

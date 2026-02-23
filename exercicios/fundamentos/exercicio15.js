@@ -5,22 +5,22 @@
 // “Não trabalhamos com este tipo de automóvel aqui”.
 function comprarCarro(estilo) {
   switch (estilo) {
-    case "hatch":
-      console.log("Compra efetuada com sucesso");
+    case 'hatch':
+      console.log('Compra efetuada com sucesso');
       break;
-    case "sedans":
-    case "motocicleta":
-    case "caminhonete":
-      console.log("Tem certeza que não prefere este modelo?");
+    case 'sedans':
+    case 'motocicleta':
+    case 'caminhonete':
+      console.log('Tem certeza que não prefere este modelo?');
       break;
     default:
-      console.log("Não trabalhamos com este tipo de automóvel aqui");
+      console.log('Não trabalhamos com este tipo de automóvel aqui');
       break;
   }
 }
 
-comprarCarro("hatch");
-comprarCarro("sedans");
-comprarCarro("motocicleta");
-comprarCarro("caminhonete");
-comprarCarro("onibus");
+comprarCarro('hatch');
+comprarCarro('sedans');
+comprarCarro('motocicleta');
+comprarCarro('caminhonete');
+comprarCarro('onibus');

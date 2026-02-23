@@ -7,12 +7,12 @@ function somarNumeros1(numeros) {
 function somarNumeros2(numeros) {
   const quantidadeDeNumeros = numeros.length;
 
-  return (quantidadeDeNumeros === 0) ? 0 : numeros[0] + somarNumeros2(numeros.slice(1));
+  return quantidadeDeNumeros === 0 ? 0 : numeros[0] + somarNumeros2(numeros.slice(1));
 }
 
 function somarNumeros3(numeros) {
-  let soma = 0
-  numeros.forEach((numero) => soma += numero);
+  let soma = 0;
+  numeros.forEach(numero => (soma += numero));
 
   return soma;
 }

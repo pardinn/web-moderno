@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 // eslint-disable-next-line func-names
 (function () {
   function navegarViaAjax(hash) {
@@ -17,7 +16,6 @@
         // Executa todos os scrips que estiverem nos arquivos html. Usado para ativar a tooltip
         const scriptContent = html.match(/<script>([\s\S]*)<\/script>/gi)?.[1] || '';
         if (scriptContent) {
-          // eslint-disable-next-line no-eval
           eval(scriptContent);
         }
       });
@@ -25,7 +23,6 @@
 
   function configurarLinks() {
     document.querySelectorAll('[wm-link]').forEach(link => {
-      // eslint-disable-next-line no-param-reassign
       link.href = link.attributes['wm-link'].value;
     });
   }

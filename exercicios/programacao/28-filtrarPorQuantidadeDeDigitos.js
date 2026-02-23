@@ -4,18 +4,18 @@
 function filtrarPorQuantidadeDeDigitos1(numeros, digitosEsperados) {
   let resultado = [];
   for (let numero of numeros) {
-    const quantidadeDeDigitos = String(numero).length
+    const quantidadeDeDigitos = String(numero).length;
     if (quantidadeDeDigitos === digitosEsperados) {
-      resultado.push(numero)
+      resultado.push(numero);
     }
   }
   return resultado;
 }
 
 function filtrarPorQuantidadeDeDigitos2(numeros, digitosEsperados) {
-  return numeros.filter((numero) => {
+  return numeros.filter(numero => {
     const quantidadeDeDigitos = String(numero).length;
-    return quantidadeDeDigitos === digitosEsperados
+    return quantidadeDeDigitos === digitosEsperados;
   });
 }
 

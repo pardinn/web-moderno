@@ -6,21 +6,21 @@ function tratarErroELancar(erro) {
   throw {
     nome: erro.name,
     msg: erro.msg,
-    date: new Date
-  }
+    date: new Date(),
+  };
 }
 
 function imprimirNomeGritado(obj) {
   try {
-    console.log(obj.name.toUpperCase() + '!!!')
+    console.log(obj.name.toUpperCase() + '!!!');
   } catch (e) {
-    tratarErroELancar(e)
+    tratarErroELancar(e);
   } finally {
-    console.log('final')
+    console.log('final');
   }
 }
 
-const obj = { name: 'Victor' }
-imprimirNomeGritado(obj)
-const obj2 = { nome: 'Vai dar erro' }
-imprimirNomeGritado(obj2)
+const obj = { name: 'Victor' };
+imprimirNomeGritado(obj);
+const obj2 = { nome: 'Vai dar erro' };
+imprimirNomeGritado(obj2);

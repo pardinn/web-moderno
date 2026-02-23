@@ -6,5 +6,5 @@ function maiorOuIgual(primeiro, segundo) {
 }
 
 console.log(maiorOuIgual(0, 0)); // retornará true
-console.log(maiorOuIgual(0, "0")); // retornará false
+console.log(maiorOuIgual(0, '0')); // retornará false
 console.log(maiorOuIgual(5, 1)); // retornará true

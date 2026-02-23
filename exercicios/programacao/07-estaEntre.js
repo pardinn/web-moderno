@@ -4,11 +4,10 @@
 // inclusivo não seja informado, seu valor padrão deverá ser false, portanto, a lógica será exclusiva, não
 // considerando se numero é igual a minimo ou a maximo.
 function estaEntre(numero, minimo, maximo, inclusivo = false) {
-  if (inclusivo) return (numero >= minimo && numero <= maximo);
+  if (inclusivo) return numero >= minimo && numero <= maximo;
 
-  return (numero > minimo && numero < maximo);
+  return numero > minimo && numero < maximo;
 }
-
 
 console.log(estaEntre(50, 10, 100)); // retornará true
 console.log(estaEntre(160, 16, 100)); // retornará false

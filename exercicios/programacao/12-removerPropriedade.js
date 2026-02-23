@@ -23,22 +23,22 @@ Retornará false se o objeto não for o mesmo.
 
 function removerPropriedade1(objeto, propriedade) {
   const copia = Object.assign({}, objeto);
-  delete copia[propriedade]
+  delete copia[propriedade];
 
   console.log('Mesmo objeto? ' + Object.is(objeto, copia));
-  return copia
+  return copia;
 }
 
 function removerPropriedade2(objeto, propriedade) {
-  const copia = { ...objeto }
-  delete copia[propriedade]
+  const copia = { ...objeto };
+  delete copia[propriedade];
 
   console.log('Mesmo objeto? ' + Object.is(objeto, copia));
-  return copia
+  return copia;
 }
 
-const obj1 = { a: 1, b: 2 }
-const obj2 = { id: 20, nome: "caneta", descricao: "Não preenchido" }
+const obj1 = { a: 1, b: 2 };
+const obj2 = { id: 20, nome: 'caneta', descricao: 'Não preenchido' };
 
-console.log(removerPropriedade1(obj1, "a")); // retornará {b: 2}
-console.log(removerPropriedade2(obj2, "descricao")); // retornará {id: 20, nome: "caneta"}
+console.log(removerPropriedade1(obj1, 'a')); // retornará {b: 2}
+console.log(removerPropriedade2(obj2, 'descricao')); // retornará {id: 20, nome: "caneta"}

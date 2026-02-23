@@ -1,5 +1,5 @@
-const primeiroElemento = (arrayOuString) => arrayOuString[0];
-const letraMinuscula = (letra) => letra.toLowerCase();
+const primeiroElemento = arrayOuString => arrayOuString[0];
+const letraMinuscula = letra => letra.toLowerCase();
 
 new Promise(function (cumprirPromessa) {
   cumprirPromessa(['Ana', 'Bia', 'Carlos', 'Daniel']);
@@ -7,4 +7,4 @@ new Promise(function (cumprirPromessa) {
   .then(primeiroElemento)
   .then(primeiroElemento)
   .then(letraMinuscula)
-  .then(console.log)
+  .then(console.log);

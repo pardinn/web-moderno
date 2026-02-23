@@ -6,8 +6,7 @@ function exibirSalario(horasTrabalhadas, salarioHora) {
   return `Salário igual a R$ ${salario.toFixed(2).replace('.', ',')}`;
 }
 
-console.log(exibirSalario(150, 40.5)) // retornará "Salário igual a R$ 6075"
-
+console.log(exibirSalario(150, 40.5)); // retornará "Salário igual a R$ 6075"
 
 // No PDF de respostas, o desafio pede calculo de salário líquido. Decidi incorporar os dois
 // Desenvolva uma função que recebe dois parâmetros, um é a quantidade de horas trabalhadas por um funcionário
@@ -16,7 +15,7 @@ console.log(exibirSalario(150, 40.5)) // retornará "Salário igual a R$ 6075"
 // 30 %, relativo a impostos.
 
 function calcularSalarioBrutoELiquido(horasTrabalhadas, ganhoHora) {
-  const impostos = 0.3
+  const impostos = 0.3;
   const salarioBruto = horasTrabalhadas * ganhoHora;
   const salarioLiquido = salarioBruto * (1 - impostos);
   const formatarSalario = salario => salario.toFixed(2).replace('.', ',');
@@ -24,4 +23,4 @@ function calcularSalarioBrutoELiquido(horasTrabalhadas, ganhoHora) {
   return `Salário bruto: R$ ${formatarSalario(salarioBruto)}. Salário líquido: R$ ${formatarSalario(salarioLiquido)}`;
 }
 
-console.log(calcularSalarioBrutoELiquido(150, 40.5)) // retornará "Salário igual a R$ 6075"
+console.log(calcularSalarioBrutoELiquido(150, 40.5)); // retornará "Salário igual a R$ 6075"

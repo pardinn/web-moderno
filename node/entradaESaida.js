@@ -1,4 +1,4 @@
-const anonimo = process.argv.indexOf('-a') !== -1
+const anonimo = process.argv.indexOf('-a') !== -1;
 // console.log(anonimo)
 
 if (anonimo) {
@@ -7,9 +7,9 @@ if (anonimo) {
 } else {
   process.stdout.write('Informe o seu nome: ');
   process.stdin.on('data', data => {
-    const nome = data.toString().replace('\r\n', '')
+    const nome = data.toString().replace('\r\n', '');
 
     process.stdout.write(`Fala ${nome}!!\n`);
     process.exit();
-  })
+  });
 }

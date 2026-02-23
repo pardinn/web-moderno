@@ -18,7 +18,7 @@ function calcularAumento(plano, salario) {
   }
 }
 
-console.log(calcularAumento("A", 2000));
-console.log(calcularAumento("B", 2000));
-console.log(calcularAumento("C", 2000));
-console.log(calcularAumento("D", 2000));
+console.log(calcularAumento('A', 2000));
+console.log(calcularAumento('B', 2000));
+console.log(calcularAumento('C', 2000));
+console.log(calcularAumento('D', 2000));
