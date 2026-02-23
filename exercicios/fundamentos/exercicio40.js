@@ -3,12 +3,12 @@
 // conceito B e de 9,0 a 10,0 o conceito A
 
 Number.prototype.entre = function (menor, maior) {
-  return this >= menor && this <= maior
-}
+  return this >= menor && this <= maior;
+};
 
 function conceituarNotas(notas) {
   let conceitos = [];
-  notas.forEach((nota) => {
+  notas.forEach(nota => {
     if (nota.entre(0, 4.9)) {
       conceitos.push({ nota: nota, conceito: 'D' });
     } else if (nota.entre(5.0, 6.9)) {
@@ -20,9 +20,9 @@ function conceituarNotas(notas) {
     } else {
       conceitos.push({ nota: nota, conteito: 'Nota inválida' });
     }
-  })
+  });
   return conceitos;
 }
 
-let notas = [10, 13, 9, 8.2, 2.5, 7.7, 6.8, -1]
+let notas = [10, 13, 9, 8.2, 2.5, 7.7, 6.8, -1];
 console.log(conceituarNotas(notas));

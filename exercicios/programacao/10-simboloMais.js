@@ -9,11 +9,11 @@ function simboloMais1(quantidade) {
 }
 
 function simboloMais2(quantidade) {
-  return Array(quantidade).fill('+').join('')
+  return Array(quantidade).fill('+').join('');
 }
 
 function simboloMais3(quantidade) {
-  return '+'.repeat(quantidade)
+  return '+'.repeat(quantidade);
 }
 
 console.log(simboloMais1(2)); // retornará "++"

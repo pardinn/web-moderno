@@ -1,57 +1,116 @@
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import prettier from 'eslint-plugin-prettier';
+import js from '@eslint/js';
 import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
-
-const { dirname } = path;
-const filename = fileURLToPath(import.meta.url);
-const directory = dirname(filename);
-
-const compat = new FlatCompat({
-  baseDirectory: directory,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
+import tseslint from 'typescript-eslint';
+import importPlugin from 'eslint-plugin-import';
+import prettier from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
 export default [
-  ...compat.extends('airbnb-base', 'plugin:@typescript-eslint/recommended', 'prettier', 'plugin:prettier/recommended'),
   {
-    plugins: {
-      '@typescript-eslint': typescriptEslint,
-      prettier,
-    },
+    ignores: [
+      'node_modules/',
+      'dist/',
+      'build/',
+      '.git/',
+      '**/*.min.js',
+      'ajax/js/jquery.js',
+      'ajax/js/axios.js', // axios minificado com requerimentos do curso
+      'bootstrap/**',
+    ],
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  importPlugin.flatConfigs.recommended,
+  prettierConfig,
+  {
+    files: ['**/*.js', '**/*.jsx'],
     languageOptions: {
+      parser: undefined,
       globals: {
         ...globals.browser,
         ...globals.commonjs,
         ...globals.node,
       },
-      parser: tsParser,
-      ecmaVersion: 'latest',
-      sourceType: 'module',
+    },
+    plugins: {
+      prettier,
     },
     rules: {
-      '@typescript-eslint/no-var-requires': 'off',
+      // Import
       'import/no-extraneous-dependencies': [
         'error',
         {
           devDependencies: true,
         },
       ],
+      'import/prefer-default-export': 'off',
+      'import/extensions': 'off',
+      'import/no-unresolved': 'off',
+
+      // Code style
       radix: ['error', 'as-needed'],
-      'func-names': ['warn', 'as-needed'],
+      'func-names': 'off', // Permitir funções anônimas (muito comum em callbacks)
       'no-console': 'off',
-      'no-plusplus': [
-        'error',
+      'no-plusplus': 'off', // Permitir ++ e --
+      'no-underscore-dangle': 'off', // Projeto usa _id, __dirname, etc
+
+      // Prettier
+      'prettier/prettier': 'warn',
+    },
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      prettier,
+    },
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.commonjs,
+        ...globals.node,
+      },
+    },
+    rules: {
+      // TypeScript
+      '@typescript-eslint/no-var-requires': 'off',
+      '@typescript-eslint/no-require-imports': 'off', // Node.js precisa de require() - CommonJS é válido
+      '@typescript-eslint/no-unused-expressions': 'warn', // Reduzir de erro para warning
+      '@typescript-eslint/no-this-alias': 'warn', // Reduzir de erro para warning
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
         {
-          allowForLoopAfterthoughts: true,
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
-      'no-underscore-dangle': ['error', { allow: ['__dirname', '__filename'] }],
+
+      // Import
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: true,
+        },
+      ],
+      'import/prefer-default-export': 'off',
+      'import/extensions': 'off',
+      'import/no-unresolved': 'off',
+
+      // Code style
+      radix: ['error', 'as-needed'],
+      'func-names': 'off', // Permitir funções anônimas (muito comum em callbacks)
+      'no-console': 'off',
+      'no-plusplus': 'off', // Permitir ++ e --
+      'no-underscore-dangle': 'off', // Projeto usa _id, __dirname, etc
+
+      // Prettier
+      'prettier/prettier': 'warn',
     },
   },
 ];

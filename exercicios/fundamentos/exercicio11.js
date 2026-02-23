@@ -7,7 +7,7 @@
 // mensagem e retornando true ou false.
 function calcularAnoBissexto(ano) {
   if (ano <= 0) {
-    return false
+    return false;
   } else if (ano % 400 == 0) {
     return true;
   } else if (ano % 100 == 0) {

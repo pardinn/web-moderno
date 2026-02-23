@@ -20,6 +20,6 @@ function verificacaoDeSring(string1, string2) {
   return estaContido;
 }
 
-console.log(verificacaoDeSring('abc', 'CaB'))
-console.log(verificacaoDeSring('Teste de função', 'Função de teste'))
-console.log(verificacaoDeSring('Teste de função', 'atestado'))
+console.log(verificacaoDeSring('abc', 'CaB'));
+console.log(verificacaoDeSring('Teste de função', 'Função de teste'));
+console.log(verificacaoDeSring('Teste de função', 'atestado'));

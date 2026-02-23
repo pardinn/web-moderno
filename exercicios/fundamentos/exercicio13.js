@@ -4,15 +4,15 @@ function classificaDia(dia) {
   switch (dia) {
     case 7:
     case 1:
-      return "Fim de semana"
+      return 'Fim de semana';
     case 2:
     case 3:
     case 4:
     case 5:
     case 6:
-      return "Dia útil"
+      return 'Dia útil';
     default:
-      return "Dia inválido"
+      return 'Dia inválido';
   }
 }
 

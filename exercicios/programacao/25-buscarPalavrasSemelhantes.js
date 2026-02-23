@@ -9,7 +9,7 @@ function buscarPalavrasSemelhantes1(palavraBuscada, palavras) {
       resultado.push(palavra);
     }
   }
-  return resultado
+  return resultado;
 }
 
 function buscarPalavrasSemelhantes2(palavraBuscada, palavras) {
@@ -21,6 +21,6 @@ function buscarPalavrasSemelhantes3(palavraBuscada, palavras) {
   return palavras.filter(palavra => palavra.includes(palavraBuscada));
 }
 
-console.log(buscarPalavrasSemelhantes1("pro", ["programação", "mobile", "profissional"])); // retornará ["programação", "profissional"]
-console.log(buscarPalavrasSemelhantes2("pro", ["pragmático", "princípio", "esporádico", "problema"])); // retornará ["programação", "profissional"]
-console.log(buscarPalavrasSemelhantes3("java", ["javascript", "java", "c++"])); // retornará ["javascript", "java"]
+console.log(buscarPalavrasSemelhantes1('pro', ['programação', 'mobile', 'profissional'])); // retornará ["programação", "profissional"]
+console.log(buscarPalavrasSemelhantes2('pro', ['pragmático', 'princípio', 'esporádico', 'problema'])); // retornará ["programação", "profissional"]
+console.log(buscarPalavrasSemelhantes3('java', ['javascript', 'java', 'c++'])); // retornará ["javascript", "java"]

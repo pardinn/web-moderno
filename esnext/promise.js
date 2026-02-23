@@ -1,9 +1,9 @@
-const { reject } = require("lodash");
+const { reject } = require('lodash');
 
 function falarDepoisDe(segundos, frase) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(frase)
+      resolve(frase);
     }, segundos * 1000);
   });
 }

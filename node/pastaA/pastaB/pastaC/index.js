@@ -1,1 +1,1 @@
-this.ola2 = 'Legal'
+this.ola2 = 'Legal';

@@ -17,7 +17,7 @@ function receberSomenteOsParesDeIndicesPares1(numeros) {
 function receberSomenteOsParesDeIndicesPares2(numeros) {
   const resultado = [];
   for (let i = 0; i < numeros.length; i += 2) {
-    const numeroPar = numeros[i] % 2 === 0
+    const numeroPar = numeros[i] % 2 === 0;
     if (numeroPar) {
       resultado.push(numeros[i]);
     }
@@ -32,7 +32,7 @@ function receberSomenteOsParesDeIndicesPares3(numeros) {
     const indicePar = indice % 2 === 0;
 
     return numeroPar && indicePar;
-  })
+  });
 }
 
 console.log(receberSomenteOsParesDeIndicesPares1([1, 2, 3, 4, 6])); // retornará [6]

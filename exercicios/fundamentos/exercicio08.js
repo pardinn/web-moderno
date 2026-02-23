@@ -28,4 +28,4 @@ function calcularDesempenho(stringPontuacoes) {
   return [qtdQuebraDeRecordes, piorJogo];
 }
 
-console.log(calcularDesempenho("10 20 20 8 25 3 0 30 1"));
+console.log(calcularDesempenho('10 20 20 8 25 3 0 30 1'));

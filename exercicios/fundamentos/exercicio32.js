@@ -1,9 +1,9 @@
 // Construir um algoritmo que calcule a média aritmética dos valores de um vetor de inteiros
 function mediaAritmetica(vetor) {
   let soma = 0;
-  vetor.forEach((num) => {
+  vetor.forEach(num => {
     soma += num;
-  })
+  });
 
   return soma / vetor.length;
 }

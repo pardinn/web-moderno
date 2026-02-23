@@ -18,6 +18,5 @@ function receberNomeDoMes(numero) {
   return meses[--numero];
 }
 
-
-console.log(receberNomeDoMes(1)) // retornará "janeiro"
-console.log(receberNomeDoMes(4)) // retornará "abril"
+console.log(receberNomeDoMes(1)); // retornará "janeiro"
+console.log(receberNomeDoMes(4)); // retornará "abril"

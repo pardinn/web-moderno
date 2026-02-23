@@ -9,7 +9,7 @@ let vetorDouble = [1.1, 2.2, 3.3, 4.4];
 function concatenar(...args) {
   resultado = [];
   for (let i = 0; i < args.length; i++) {
-    resultado = resultado.concat(args[i])
+    resultado = resultado.concat(args[i]);
   }
   return resultado;
 }

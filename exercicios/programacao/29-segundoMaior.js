@@ -4,17 +4,15 @@ function segundoMaior1(numeros) {
   let segundoMaior;
 
   numeros.forEach((numero, indice) => {
-    if (numero > numeros[indiceDoMaior])
-      indiceDoMaior = indice;
+    if (numero > numeros[indiceDoMaior]) indiceDoMaior = indice;
   });
 
   numeros.splice(indiceDoMaior, 1);
   segundoMaior = numeros[0];
 
   numeros.forEach(numero => {
-    if (numero > segundoMaior)
-      segundoMaior = numero;
-  })
+    if (numero > segundoMaior) segundoMaior = numero;
+  });
 
   return segundoMaior;
 }

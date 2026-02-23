@@ -1,22 +1,36 @@
 const gulp = require('gulp');
-const webserver = require('gulp-webserver');
+const browserSync = require('browser-sync').create();
 const watch = require('gulp-watch');
 
 function servidor() {
-  return gulp.src('build').pipe(
-    webserver({
-      port: 8080,
-      open: true,
-      livereload: true,
-    }),
-  );
+  browserSync.init({
+    server: {
+      baseDir: 'build',
+    },
+    port: 8080,
+    open: true,
+    ui: false,
+  });
+  return undefined;
 }
 
 function monitorarArquivos(cb) {
-  watch('src/**/*.html', () => gulp.series('appHTML')());
-  watch('src/**/*.scss', () => gulp.series('appCSS')());
-  watch('src/**/*.js', () => gulp.series('appJS')());
-  watch('src/assets/imgs/*.*', () => gulp.series('appIMG')());
+  watch('src/**/*.html', () => {
+    gulp.series('appHTML')();
+    browserSync.reload('*.html');
+  });
+  watch('src/**/*.scss', () => {
+    gulp.series('appCSS')();
+    browserSync.reload('*.css');
+  });
+  watch('src/**/*.js', () => {
+    gulp.series('appJS')();
+    browserSync.reload('*.js');
+  });
+  watch('src/assets/imgs/*.*', () => {
+    gulp.series('appIMG')();
+    browserSync.reload('*.html');
+  });
   return cb();
 }
 

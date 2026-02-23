@@ -7,14 +7,13 @@
    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random */
 
 function funcaoDaSorte(numeroEscolhido) {
-  const min = 1
-  const max = 10
-  const numeroAleatorio = Math.floor(Math.random() * (max - min + 1) + min)
+  const min = 1;
+  const max = 10;
+  const numeroAleatorio = Math.floor(Math.random() * (max - min + 1) + min);
 
-  return (numeroEscolhido === numeroAleatorio ?
-    `Parabéns! O número sorteado foi o ${numeroAleatorio}` :
-    `Que pena! O número sorteado foi o ${numeroAleatorio}`
-  )
+  return numeroEscolhido === numeroAleatorio
+    ? `Parabéns! O número sorteado foi o ${numeroAleatorio}`
+    : `Que pena! O número sorteado foi o ${numeroAleatorio}`;
 }
 
 console.log(funcaoDaSorte(10)); // retornará "Parabéns! O número sorteado foi o 10"

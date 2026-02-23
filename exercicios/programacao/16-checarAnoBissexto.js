@@ -5,16 +5,16 @@
 // Com isso em mente, desenvolva uma função que recebe um número correspondente a um ano e retorna se ele é
 // bissexto ou não.
 function checarAnoBissexto1(ano) {
-  const divisivelPorQuatro = ano % 4 === 0
-  const divisivelPorCem = ano % 100 === 0
-  const divisivelPorQuatrocentos = ano % 400 === 0
+  const divisivelPorQuatro = ano % 4 === 0;
+  const divisivelPorCem = ano % 100 === 0;
+  const divisivelPorQuatrocentos = ano % 400 === 0;
 
   return (divisivelPorQuatro && !divisivelPorCem) || divisivelPorQuatrocentos;
 }
 
 function checarAnoBissexto2(ano) {
   //checagem indireta, validando se o mês de fevereiro do ano em questão tem 29 dias
-  return new Date(ano, 1, 29).getDate() === 29
+  return new Date(ano, 1, 29).getDate() === 29;
 }
 
 console.log(checarAnoBissexto1(2020)); // retornará true

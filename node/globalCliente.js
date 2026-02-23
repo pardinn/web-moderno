@@ -1,6 +1,6 @@
-require('./global')
+require('./global');
 
 console.log(MinhaApp.saudacao());
 
-MinhaApp.nome = 'Eita!';  //não vai mudar se usar Object.freeze
+MinhaApp.nome = 'Eita!'; //não vai mudar se usar Object.freeze
 console.log(MinhaApp.nome);

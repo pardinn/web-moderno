@@ -19,13 +19,11 @@ function objetoParaArray1(objeto) {
   return resultado;
 }
 
-
 function objetoParaArray2(objeto) {
   const chaves = Object.keys(objeto);
   const resultado = chaves.map(chave => [chave, objeto[chave]]);
 
   return resultado;
-
 }
 
 function objetoParaArray3(objeto) {
@@ -33,19 +31,19 @@ function objetoParaArray3(objeto) {
 }
 
 const obj1 = {
-  nome: "Maria",
-  profissao: "Desenvolvedora de software"
-}
+  nome: 'Maria',
+  profissao: 'Desenvolvedora de software',
+};
 
 const obj2 = {
   codigo: 11111,
-  preco: 12000
-}
+  preco: 12000,
+};
 
 const obj3 = {
-  marca: "Music Man",
-  modelo: "JP12"
-}
+  marca: 'Music Man',
+  modelo: 'JP12',
+};
 
 console.log(objetoParaArray1(obj1)); // irá retornar [["nome", "Maria"], ["profissao", "Desenvolvedora de Software"]]
 console.log(objetoParaArray2(obj2)); // irá retornar [["codigo", 11111], ["preco", 12000]]
