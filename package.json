@@ -31,7 +31,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "minimatch": "^10.2.2",
+    "minimatch": "^10.2.4",
     "prettier": "^3.3.3",
     "typescript-eslint": "^8.56.0"
   }
