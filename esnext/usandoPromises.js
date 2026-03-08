@@ -1,13 +1,13 @@
 // com promise...
 const http = require('http');
 
-const getTurma = (letra) => {
+const getTurma = letra => {
   const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`;
   return new Promise((resolve, reject) => {
-    http.get(url, (res) => {
+    http.get(url, res => {
       let resultado = '';
 
-      res.on('data', (dados) => {
+      res.on('data', dados => {
         resultado += dados;
       });
 
@@ -19,7 +19,7 @@ const getTurma = (letra) => {
         }
       });
     });
-  })
+  });
 };
 
 // let nomes = [];
@@ -40,4 +40,4 @@ Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])
   .then(nomes => console.log(nomes))
   .catch(e => console.log(e.message));
 
-getTurma('D').catch(e => console.log(e.message))
+getTurma('D').catch(e => console.log(e.message));

@@ -3,9 +3,7 @@
 // desenvolvendo no momento é a de somar o total das despesas.
 // Crie uma função que receba um array de produtos e retorne o total das despesas.
 function despesasTotais1(produtos) {
-  return produtos
-    .map(item => item.preco)
-    .reduce((acumulador, valorAtual) => acumulador + valorAtual);
+  return produtos.map(item => item.preco).reduce((acumulador, valorAtual) => acumulador + valorAtual);
 }
 
 function despesasTotais2(produtos) {
@@ -14,12 +12,12 @@ function despesasTotais2(produtos) {
 }
 
 const produtos1 = [
-  { nome: "Jornal online", categoria: "Informação", preco: 89.99 },
-  { nome: "Cinema", categoria: "Entretenimento", preco: 150 },
+  { nome: 'Jornal online', categoria: 'Informação', preco: 89.99 },
+  { nome: 'Cinema', categoria: 'Entretenimento', preco: 150 },
 ];
 const produtos2 = [
-  { nome: "Galaxy S20", categoria: "Eletrônicos", preco: 3599.99 },
-  { nome: "Macbook Pro", categoria: "Eletrônicos", preco: 30999.90 },
+  { nome: 'Galaxy S20', categoria: 'Eletrônicos', preco: 3599.99 },
+  { nome: 'Macbook Pro', categoria: 'Eletrônicos', preco: 30999.9 },
 ];
 
 console.log(despesasTotais1(produtos1)); // retornará 239.99

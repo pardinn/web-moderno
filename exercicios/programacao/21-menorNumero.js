@@ -9,12 +9,12 @@ function menorNumero1(numeros) {
 }
 
 function menorNumero2(numeros) {
-  const menorNumero = (anterior, atual) => atual < anterior ? atual : anterior;
+  const menorNumero = (anterior, atual) => (atual < anterior ? atual : anterior);
   return numeros.reduce(menorNumero);
 }
 
 function menorNumero3(numeros) {
-  return Math.min(...numeros)
+  return Math.min(...numeros);
 }
 
 console.log(menorNumero1([10, 5, 35, 65])); // retornará 5

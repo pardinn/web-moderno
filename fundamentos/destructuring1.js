@@ -1,25 +1,27 @@
 // novo recurso do ES2015
 
 const pessoa = {
-    nome: 'Ana',
-    idade: 5,
-    endereco: {
-        logradouro: 'Rua ABC',
-        numero: 1000
-    }
-}
+  nome: 'Ana',
+  idade: 5,
+  endereco: {
+    logradouro: 'Rua ABC',
+    numero: 1000,
+  },
+};
 
-const { nome, idade } = pessoa
-console.log(nome, idade)
+const { nome, idade } = pessoa;
+console.log(nome, idade);
 
-const { nome: n, idade: i } = pessoa
-console.log(n, i)
+const { nome: n, idade: i } = pessoa;
+console.log(n, i);
 
-const { sobrenome, bemHumorada = true } = pessoa
-console.log(sobrenome, bemHumorada)
+const { sobrenome, bemHumorada = true } = pessoa;
+console.log(sobrenome, bemHumorada);
 
-const { endereco: { logradouro, numero, cep } } = pessoa
-console.log(logradouro, numero, cep)
+const {
+  endereco: { logradouro, numero, cep },
+} = pessoa;
+console.log(logradouro, numero, cep);
 
 // const { conta: { ag, num } } = pessoa //vai quebrar aqui pois estou tentando acessar o filho de algo que não existe
 // console.log(ag, num)

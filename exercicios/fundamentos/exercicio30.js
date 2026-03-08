@@ -12,6 +12,6 @@ function maiorMenor(vetor) {
   console.log(`${maior} é o maior número. ${menor} é o menor número`);
 }
 
-maiorMenor([0, 1, 5, 100, 50, 280, 200, 6])
-maiorMenor([250, 0, 1, 5, 100, 50, 280, 200, 300])
-maiorMenor([-5, 250, 0, 1, 5, 100, 50, 280, 200, 300])
+maiorMenor([0, 1, 5, 100, 50, 280, 200, 6]);
+maiorMenor([250, 0, 1, 5, 100, 50, 280, 200, 300]);
+maiorMenor([-5, 250, 0, 1, 5, 100, 50, 280, 200, 300]);

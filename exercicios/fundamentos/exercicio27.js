@@ -8,7 +8,7 @@ function calcularCrescimento(crianca1, crianca2) {
     } else if (crianca1.taxa < crianca2.taxa) {
       return 'A criança 2 ultrapassará a criança 1 em 1 ano.';
     } else {
-      'As crianças tem iagual altura e taxa de crescimento';
+      ('As crianças tem iagual altura e taxa de crescimento');
     }
   } else {
     if (crianca1.altura > crianca2.altura) {

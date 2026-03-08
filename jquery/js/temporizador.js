@@ -1,5 +1,4 @@
 (function temporizadorModule($) {
-  // eslint-disable-next-line no-param-reassign
   $.fn.temporizador = function temporizadorFunc(opcoes) {
     // .extend garante que os parametros padrão são utilizados, caso o usuário não os tenha fornecido. Mesmo que spread
     const opcoesFinais = $.extend(

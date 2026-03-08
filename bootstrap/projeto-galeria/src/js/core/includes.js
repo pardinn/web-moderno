@@ -2,7 +2,6 @@ import $ from 'jquery';
 
 const loadHtmlSuccessCallbacks = [];
 
-// eslint-disable-next-line import/prefer-default-export
 export function onLoadHtmlSuccess(callback) {
   if (loadHtmlSuccessCallbacks.includes(callback)) return;
   loadHtmlSuccessCallbacks.push(callback);

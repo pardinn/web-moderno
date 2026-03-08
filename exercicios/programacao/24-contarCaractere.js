@@ -13,7 +13,7 @@ function contarCaractere1(caractereBuscado, frase) {
 
 function contarCaractere2(caractereBuscado, frase) {
   const buscarCaracteresCorrespondentes = caractere => caractere === caractereBuscado;
-  return [...frase].filter(buscarCaracteresCorrespondentes).length
+  return [...frase].filter(buscarCaracteresCorrespondentes).length;
 }
-console.log(contarCaractere1("r", "A sorte favorece os audazes")); // retornará 2
-console.log(contarCaractere2("c", "Conhece-te a ti mesmo")); // retornará 1
+console.log(contarCaractere1('r', 'A sorte favorece os audazes')); // retornará 2
+console.log(contarCaractere2('c', 'Conhece-te a ti mesmo')); // retornará 1

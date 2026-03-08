@@ -4,14 +4,14 @@
 function verificaIntervalo(vetorNumeros) {
   let dentro = 0;
   let fora = 0;
-  vetorNumeros.forEach((numero) => {
+  vetorNumeros.forEach(numero => {
     if (numero >= 10 && numero <= 20) {
       dentro++;
     } else {
-      fora++
+      fora++;
     }
-  })
-  console.log(`${dentro} números dentro do intervalo. ${fora} números fora do intervalo.`)
+  });
+  console.log(`${dentro} números dentro do intervalo. ${fora} números fora do intervalo.`);
 }
 
-verificaIntervalo([1, 2, 5, 8, 10, 11, 50, 22, 30, 40, 20, 19])
+verificaIntervalo([1, 2, 5, 8, 10, 11, 50, 22, 30, 40, 20, 19]);

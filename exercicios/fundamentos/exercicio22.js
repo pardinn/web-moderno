@@ -4,10 +4,10 @@
 // compostos). O retorno deve ser o valor a ser pago para o respectivo mês escolhido.
 function calcularAnuidade(valorPrincipal, mes) {
   if (mes > 0 && mes < 13) {
-    let atraso = mes - 1
-    return (valorPrincipal * (1.05 ** atraso)).toFixed(2);
+    let atraso = mes - 1;
+    return (valorPrincipal * 1.05 ** atraso).toFixed(2);
   } else {
-    return 'Mês inválido.'
+    return 'Mês inválido.';
   }
 }
 

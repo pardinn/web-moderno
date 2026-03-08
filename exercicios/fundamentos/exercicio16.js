@@ -13,7 +13,7 @@ function calculadora(numero1, operacao, numero2) {
     case '/':
       return numero1 / numero2;
     default:
-      return "Esta operação é inválida";
+      return 'Esta operação é inválida';
   }
 }
 console.log(calculadora(2, '+', 3));
