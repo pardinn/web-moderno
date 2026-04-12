@@ -4,3 +4,5 @@ node_modules
 fiveserver.config.js
 **/upload/*
 **/.DS_Store
+.gemini/
+gha-creds-*.json
