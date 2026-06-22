@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 7
     outputs:
       available_labels: '${{ steps.get_labels.outputs.available_labels }}'
-      selected_labels: '${{ env.SELECTED_LABELS }}'
+      selected_labels: '${{ steps.gemini_analysis.outputs.summary }}'
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: 'Get repository labels'
         id: 'get_labels'
-        uses: 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' # ratchet:actions/github-script@v9.0.0
+        uses: 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' # ratchet:actions/github-script@v8.0.0
         with:
           # NOTE: we intentionally do not use the given token. The default
           # GITHUB_TOKEN provided by the action has enough permissions to read
@@ -55,16 +55,28 @@ jobs:
             core.info(`Found ${labelNames.length} labels: ${labelNames.join(', ')}`);
             return labelNames;
 
+      - name: 'Prepare prompt context'
+        shell: 'bash'
+        run: |-
+          mkdir -p .gemini
+          jq -n \
+            --arg labels "${AVAILABLE_LABELS}" \
+            --arg title "${ISSUE_TITLE}" \
+            --arg body "${ISSUE_BODY}" \
+            '{available_labels: $labels, issue_title: $title, issue_body: $body}' > .gemini/context.json
+        env:
+          AVAILABLE_LABELS: '${{ steps.get_labels.outputs.available_labels }}'
+          ISSUE_TITLE: '${{ github.event.issue.title }}'
+          ISSUE_BODY: '${{ github.event.issue.body }}'
+
       - name: 'Run Gemini issue analysis'
         id: 'gemini_analysis'
         if: |-
           ${{ steps.get_labels.outputs.available_labels != '' }}
         uses: 'google-github-actions/run-gemini-cli@v0' # ratchet:exclude
         env:
+          GEMINI_CLI_TRUST_WORKSPACE: 'true'
           GITHUB_TOKEN: '' # Do NOT pass any auth tokens here since this runs on untrusted inputs
-          ISSUE_TITLE: '${{ github.event.issue.title }}'
-          ISSUE_BODY: '${{ github.event.issue.body }}'
-          AVAILABLE_LABELS: '${{ steps.get_labels.outputs.available_labels }}'
         with:
           gcp_location: '${{ vars.GOOGLE_CLOUD_LOCATION }}'
           gcp_project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
@@ -79,6 +91,8 @@ jobs:
           use_vertex_ai: '${{ vars.GOOGLE_GENAI_USE_VERTEXAI }}'
           upload_artifacts: '${{ vars.UPLOAD_ARTIFACTS }}'
           workflow_name: 'gemini-triage'
+          # Explicitly set the issue number to handle `issue_comment` triggers where the context might be ambiguous
+          github_issue_number: '${{ github.event.issue.number }}'
           settings: |-
             {
               "model": {
@@ -90,9 +104,7 @@ jobs:
                 "outfile": ".gemini/telemetry.log"
               },
               "tools": {
-                "core": [
-                  "run_shell_command(echo)"
-                ]
+                "core": []
               }
             }
           prompt: '/gemini-triage'
@@ -112,7 +124,7 @@ jobs:
         id: 'mint_identity_token'
         if: |-
           ${{ vars.APP_ID }}
-        uses: 'actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3' # ratchet:actions/create-github-app-token@v2
+        uses: 'actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf' # ratchet:actions/create-github-app-token@v2
         with:
           app-id: '${{ vars.APP_ID }}'
           private-key: '${{ secrets.APP_PRIVATE_KEY }}'
@@ -125,7 +137,7 @@ jobs:
           ISSUE_NUMBER: '${{ github.event.issue.number }}'
           AVAILABLE_LABELS: '${{ needs.triage.outputs.available_labels }}'
           SELECTED_LABELS: '${{ needs.triage.outputs.selected_labels }}'
-        uses: 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3' # ratchet:actions/github-script@v9.0.0
+        uses: 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' # ratchet:actions/github-script@v8.0.0
         with:
           # Use the provided token so that the "gemini-cli" is the actor in the
           # log for what changed the labels.
